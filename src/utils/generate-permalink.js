@@ -41,7 +41,7 @@ const generatePermalink = (data, collectionType, collectionSlug, paginationSlug 
         }
         return (locale === data.defaultLanguage) ? `/${slug}/` : `/${langSlug}/${slug}/`;
     } else {
-        const slug = slugify(data.title);
+        const slug = data.permalink ? slugify(data.permalink) : slugify(data.title);
         return (locale === data.defaultLanguage) ? `/${collectionSlug}/${slug}/` : `/${langSlug}/${collectionSlug}/${slug}/`;
     }
 };
